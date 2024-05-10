@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Dungeons, Dragons & Drafts
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="image" href="./background.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- reset styles -->
+    <style>
+      /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+      */
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol, ul {
+        list-style: none;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+    </style>
+    <!-- end reset styles -->
+    <!-- custom styles -->
+    <style>
+      html, body {
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        height: 100%;
+        min-height: 100%;
+        min-width: 100%;
+        text-shadow: 0 0 8px #000000;
+        width: 100%;
+      }
+
+      h1 {
+        font-family: "Gentium Book Plus", serif;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 30px;
+        margin-top: 30px;
+      }
+
+      a {
+        color: #ffffff;
+      }
+
+      a:focus {
+        outline: solid #ffffff 1px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+
+      sub {
+        font-size: 12px;
+      }
+
+      footer {
+        background-color: #111111;
+        bottom: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+      }
+
+      footer h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      footer a {
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-right: 10px;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      svg {
+        filter: drop-shadow(0px 4px 4px #000000);
+        width: 100px;
+      }
+
+      .background {
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      .background::before {
+        background-color: #000000;
+        background-image: url('./background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: "";
+        display: block;
+        height: 100%;
+        filter: brightness(60%);
+        left: 0;
+        position: fixed;
+        right: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .schedule-card {
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px #000000;
+        box-sizing: border-box;
+        color: #333333;
+        margin-bottom: 40px;
+        padding: 10px;
+        text-align: left;
+        text-shadow: none;
+      }
+
+      .schedule-card h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+      
+      .schedule-card p {
+        font-size: 16px;
+      }
+
+      .container {
+        box-sizing: border-box;
+        margin: 0 auto 160px auto;
+        max-width: 800px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .discord-container {
+        margin: 60px 0;
+      }
+
+      .maps-container {
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px #000000;
+      }
+
+      .maps-container-text {
+        box-sizing: border-box;
+        color: #333333;
+        padding: 10px;
+        text-align: left;
+        text-shadow: none;
+      }
+
+      .maps-container-text p {
+        font-size: 16px;
+        line-height: 1;
+        margin-bottom: 4;
+      }
+
+      .maps-container-text h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+    </style>
+    <!-- end custom styles -->
+  </head>
+  <body>
+    <div class="background">
+      <div
+        class="container"
+        itemscope
+        itemtype="https://schema.org/Event">
+        <h1 itemprop="name">
+          Dungeons, Dragons & Drafts
+        </h1>
+        <p itemprop="description">
+          We are one of the largest organized TTRPG gaming groups in Colorado! We mostly play D&D 5E, but you will find other TTRPG systems and board games as well.
+        </p>
+        <div class="discord-container">
+          <a
+            href="https://discord.gg/qjcnqqa7jT"
+            itemprop="url"
+            target="_blank">
+            <!-- discord Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 127.14 96.36">
+              <path
+                fill="#ffffff"
+                d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+            </svg>
+            <!-- end discord Icon -->
+            <p>
+              Sign up on Discord to join a table!
+            </p>
+          </a>
+        </div>
+        <div class="schedule-card">
+          <h2>
+            Schedule
+          </h2>
+          <p>
+            <strong>
+              Next Meetup:
+            </strong>
+            <span id="meetup-container"></span></p>
+          <p>
+            <strong>
+              This Month's Hat Trick Day:
+            </strong>
+            <span id="hat-trick-container"></span>
+          </p>
+          <p>
+            <sub>
+              You must sign up with a table on our Discord to play!
+            </sub>
+          </p>
+          <p>
+            <sub>
+              *Hat Trick is a day for players to try out DMing, try out new game systems, and to give our dungeon masters a chance to be players. These games are typically not cannon.
+            </sub>
+          </p>
+        </div>
+        <div class="maps-container">
+          <div class="maps-container-text">
+            <h2
+              itemprop="eventschedule"
+              itemscope
+              itemtype="https://schema.org/Schedule">
+              Every
+              <span itemprop="byDay">
+                Tuesday
+              </span>
+              <span itemprop="startTime">
+                6:00 PM
+              </span>
+              -
+              <span itemprop="endTime">
+                9:00 PM
+              </span>
+            </h2>
+            <div
+              itemprop="location"
+              itemscope
+              itemtype="https://schema.org/Place">
+              <p itemprop="name">
+                Copper Kettle Brewing Company
+              </p>
+              <p
+                itemprop="address"
+                itemscope
+                itemtype="https://schema.org/PostalAddress">
+                <span itemprop="streetAddress">
+                  1338 South Valentia Street
+                </span>
+                .
+                <span itemprop="addressLocality">
+                  Denver
+                </span>
+                ,
+                <span itemprop="addressRegion">
+                  CO
+                </span>
+                <span itemprop="postalCode">
+                  80247
+                </span>
+              </p>
+            </div>
+          </div>
+          <!-- google maps embed -->
+          <div style="overflow:hidden;resize:none;max-width:100%;width:100%;height:250px;">
+            <div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.0961662653576!2d-104.89391342366463!3d39.69254169939694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7d0a884c421b%3A0x241e38d10b3530fb!2sCopper%20Kettle%20Brewing%20Company!5e0!3m2!1sen!2sus!4v1715348474552!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <a class="googlecoder" href="https://kbj9qpmy.com/bp" id="inject-map-data">
+              Internet Provider
+            </a>
+            <style>#my-map-canvas img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+          </div>
+          <!-- end google maps embed -->
+        </div>
+      </div>
+      <footer>
+        <h2>Useful Links</h2>
+        <a href="https://kbj9qpmy.com/bp" target="_blank">Discord</a>
+        <a href="https://www.meetup.com/denver-rpg/events/300340244/" target="_blank">Meetup</a>
+        <a href="https://www.copperkettledenver.com/" target="_blank">Copper Kettle Brewing</a>
+        <a href="https://www.dndbeyond.com/" target="_blank">D&D Beyond</a>
+        <a href="https://fastcharacter.com/" target="_blank">Fast Character</a>
+        <a href="https://www.thievesguild.cc/spells/spellcards" target="_blank">Thieves Guild Spell Cards</a>
+        <a href="http://dnd5e.wikidot.com/" target="_blank">5e Wiki</a>
+      </footer>
+    </div>
+    <script>
+      const getNextMeetupFrom = (date) => {
+        const tuesdayOffset = 2;
+        date.setDate(date.getDate() + (tuesdayOffset + 7 - date.getDay()) % 7);
+        return date;
+      };
+
+      const getThisMonthsHatTrick = () => {
+        const date = new Date();
+        date.setDate(21);
+        getNextMeetupFrom(date);
+        return date;
+      };
+
+      const printDate = (selector, date) => {
+        const el = document.getElementById(selector);
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDateString = date.toLocaleDateString('en-US', options);
+        el.innerText = formattedDateString;
+      };
+
+      const today = new Date();
+      const nextMeetup = getNextMeetupFrom(today);
+      const thisMonthsHatTrick = getThisMonthsHatTrick();
+
+      printDate('meetup-container', nextMeetup);
+      printDate('hat-trick-container', thisMonthsHatTrick);
+    </script>
+  </body>
+</html>
